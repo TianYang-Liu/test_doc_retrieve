@@ -1,0 +1,26 @@
+[project]
+name = "test-doc-retrieve"
+version = "0.1.0"
+description = "SRS document RAG pipeline for test case generation"
+requires-python = ">=3.14.0, <3.15"
+dependencies = [
+    "docling",
+    "lark-oapi",
+    "qdrant-client",
+    "llama-index",
+    "llama-index-node-parser-docling",
+    "llama-index-vector-stores-qdrant",
+    "llama-index-embeddings-huggingface",
+    "sentence-transformers",
+    "requests",
+    "torch",
+    "torchvision",
+]
+
+[tool.uv.sources]
+torch = [
+    { path = "torch-2.10.0-cp314-cp314-macosx_11_0_x86_64.whl", marker = "sys_platform == 'darwin'" },
+]
+torchvision = [
+    { path = "torchvision-0.25.0-cp314-cp314-macosx_11_0_x86_64.whl", marker = "sys_platform == 'darwin'" },
+]
